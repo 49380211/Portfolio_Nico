@@ -1,6 +1,16 @@
 ---
 // Cascarón del documento: head, fuentes y estilos.
 // main.css es la única hoja que se importa: ella arma el orden de la cascada.
+//
+// Sobre las etiquetas og: definen cómo se ve el enlace al compartirlo en
+// LinkedIn, WhatsApp y demás. Falta og:image, que necesita una imagen de
+// 1200x630 y una URL absoluta, que a su vez necesita `site` en astro.config.mjs.
+//
+// El <script> del final del head tiene que correr antes de pintar: oculta el
+// nombre hasta que entra la animación. El timeout de 5 s es la red de
+// seguridad por si el JS principal nunca llega.
+//
+// Los comentarios van acá y no en el markup para que no viajen al navegador.
 import '../styles/main.css';
 
 interface Props {
@@ -19,6 +29,15 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
 
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta name="twitter:card" content="summary" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,8 +45,6 @@ const { title, description } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap"
     />
 
-    <!-- Tiene que correr antes de pintar: oculta el nombre hasta que entra la animación.
-         El timeout es la red de seguridad si el JS principal nunca llega. -->
     <script is:inline>
       document.documentElement.classList.add('js', 'loading');
       setTimeout(() => document.documentElement.classList.remove('loading'), 5000);
