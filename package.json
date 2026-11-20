@@ -11,5 +11,9 @@
   },
   "devDependencies": {
     "astro": "^7.4.13"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "three": "0.128.0"
   }
 }

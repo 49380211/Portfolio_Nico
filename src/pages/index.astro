@@ -33,10 +33,6 @@ import Toast from '../components/Toast.astro';
   <TennisBall />
   <Toast />
 
-  <!-- Librerías externas: se cargan antes del script principal, que es un módulo
-       y por lo tanto siempre corre después. -->
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
     import '../scripts/main.js';
   </script>

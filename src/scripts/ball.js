@@ -1,3 +1,5 @@
+import * as T from 'three';
+
 import { RM, hero } from './env.js';
 
 /* Pelota de tenis en 3D: cae en la "O" de NICOLÁS y, al bajar, rueda hasta el
@@ -8,11 +10,11 @@ const tb = document.getElementById('tb'), shEl = document.getElementById('tbSh')
 const SZ = 280;
 let A = null, cur = null, vel = { x: 0, y: 0, d: 0 }, rot = 0, hop = 0, hv = 0, squash = 0, lastY = scrollY, started = false, prev = null, three = null, lastT = 0;
 
-// fieltro con fibras + costura con la curva real de una pelota de tenis
+// fieltro con fibras + costura con la curva real de una pelota de tenis.
+// Si falla (navegador sin WebGL), devuelve null y queda el SVG de respaldo.
 const buildBall = () => {
-  if (!window.THREE) return null;
   try {
-    const T = THREE, W = 1024, H = 512;
+    const W = 1024, H = 512;
     const col = document.createElement('canvas'), bmp = document.createElement('canvas');
     col.width = bmp.width = W; col.height = bmp.height = H;
     const g = col.getContext('2d'), b = bmp.getContext('2d');
