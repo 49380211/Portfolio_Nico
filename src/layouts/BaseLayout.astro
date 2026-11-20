@@ -1,0 +1,41 @@
+---
+// Cascarón del documento: head, fuentes y estilos globales.
+// El orden de los estilos es el mismo que en el documento original:
+// primero el reset, después la hoja del diseño.
+import '../styles/base.css';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- Tiene que correr antes de pintar: oculta el nombre hasta que entra la animación.
+         El timeout es la red de seguridad si el JS principal nunca llega. -->
+    <script is:inline>
+      document.documentElement.classList.add('js', 'loading');
+      setTimeout(() => document.documentElement.classList.remove('loading'), 5000);
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
