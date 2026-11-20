@@ -1,0 +1,42 @@
+---
+// Deporte: dos columnas separadas por una regla. El número grande lo cuenta
+// `main.js` desde 0 (`data-count`).
+import SectionHead from '../SectionHead.astro';
+import Photo from '../Photo.astro';
+---
+
+<section class="sec" id="deporte">
+  <div class="wrap">
+    <SectionHead label="Deporte" />
+    <h2 class="h2 split" style="margin-bottom:clamp(48px,6vw,90px)">Dos deportes que<br>marcaron quién soy.</h2>
+    <div class="sports">
+      <article class="sp tenis">
+        <div class="big-n fade"><span class="num" data-count="4">4</span><small>años tenía cuando empecé. Nunca dejé.</small></div>
+        <h3 class="split">Tenis</h3>
+        <p class="fade">Competí en torneos intercountry, pero lo que más me dejó fueron las amistades, el compañerismo y las ganas constantes de superarme.</p>
+        <div class="kv fade"><span>Torneos intercountry</span><span>Sigo jugando</span></div>
+        <div class="photos">
+          <Photo id="tenis-1" label="Foto de tenis" />
+          <Photo id="tenis-2" label="Foto de tenis" delay=".12s" />
+        </div>
+      </article>
+      <article class="sp tkd">
+        <div class="big-n fade"><span class="num" data-count="5">5</span><small>años tenía cuando empecé. Practiqué hasta 2021.</small></div>
+        <h3 class="split">Taekwondo</h3>
+        <p class="fade">Competí en Misiones, Avellaneda y otras sedes, y gané medallas en lucha y tules. Sus cinco principios me dejaron una huella que sigo llevando.</p>
+        <div class="kv fade"><span><i style="background:#E2B53C"></i>Oro</span><span><i style="background:#BFC6D2"></i>Plata</span><span><i style="background:#B9733A"></i>Bronce</span></div>
+        <ol class="principles" id="principles">
+          <li style="--i:0"><b>01</b><span>Cortesía</span><em>Ye Ui</em></li>
+          <li style="--i:1"><b>02</b><span>Integridad</span><em>Yom Chi</em></li>
+          <li style="--i:2"><b>03</b><span>Perseverancia</span><em>In Nae</em></li>
+          <li style="--i:3"><b>04</b><span>Autocontrol</span><em>Guk Gi</em></li>
+          <li style="--i:4"><b>05</b><span>Espíritu indomable</span><em>Baekjul Boolgool</em></li>
+        </ol>
+        <div class="photos">
+          <Photo id="taekwondo-1" label="Foto de taekwondo" />
+          <Photo id="taekwondo-2" label="Foto de taekwondo" delay=".12s" />
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

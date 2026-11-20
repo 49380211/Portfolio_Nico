@@ -1,0 +1,32 @@
+---
+// Formación. Cada fila lleva `data-odo`: el año se dibuja con odómetros de
+// dígitos que `main.js` hace girar hasta el número correcto al entrar en pantalla.
+import SectionHead from '../SectionHead.astro';
+---
+
+<section class="sec" id="formacion">
+  <div class="wrap">
+    <SectionHead label="Formación" />
+    <h2 class="h2 split" style="margin-bottom:clamp(40px,5vw,72px)">Del secundario<br>a la ingeniería.</h2>
+    <div class="edu-row" data-odo>
+      <i class="rl draw"></i>
+      <div class="odo" data-v="2026" aria-label="2026"></div>
+      <div class="who fade" style="--d:1"><h3>ORT Argentina</h3><p>5.º año · orientación TIC</p></div>
+      <span class="state now fade" style="--d:2"><i></i>En curso</span>
+    </div>
+    <div class="edu-row" data-odo>
+      <i class="rl draw"></i>
+      <div class="odo" data-v="2027" aria-label="2027"></div>
+      <div class="who fade" style="--d:1"><h3>ITBA</h3><p>Ingeniería Industrial</p></div>
+      <span class="state next fade" style="--d:2"><i></i>Empiezo</span>
+    </div>
+    <div class="langs fade" id="langs">
+      <div class="k">Idiomas</div>
+      <ul>
+        <li><b>Español</b><span>Nativo</span><div class="dots" data-l="5"></div></li>
+        <li><b>Inglés</b><span>Fluido</span><div class="dots" data-l="4"></div></li>
+        <li><b>Portugués</b><span>Comprensión básica</span><div class="dots" data-l="2"></div></li>
+      </ul>
+    </div>
+  </div>
+</section>

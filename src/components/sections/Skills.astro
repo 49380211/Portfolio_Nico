@@ -1,0 +1,17 @@
+---
+// Habilidades: cuatro columnas. El `--d` escalona el fade de cada párrafo
+// y el `--d` de la regla, su dibujado.
+import SectionHead from '../SectionHead.astro';
+---
+
+<section class="sec" id="habilidades">
+  <div class="wrap">
+    <SectionHead label="Habilidades" />
+    <div class="skills">
+      <div class="sk"><i class="rl draw"></i><h3 class="split">Comunicación</h3><p class="fade" style="--d:1">Me expreso con claridad, tanto para presentar una idea como para coordinar con otros.</p></div>
+      <div class="sk"><i class="rl draw" style="--d:1"></i><h3 class="split">Perseverancia</h3><p class="fade" style="--d:2">Más de una década de tenis y taekwondo me enseñó a no aflojar.</p></div>
+      <div class="sk"><i class="rl draw" style="--d:2"></i><h3 class="split">Liderazgo</h3><p class="fade" style="--d:3">Tomo la iniciativa y ayudo a ordenar al grupo hacia un objetivo común.</p></div>
+      <div class="sk"><i class="rl draw" style="--d:3"></i><h3 class="split">Trabajo en equipo</h3><p class="fade" style="--d:4">Del compañerismo en la cancha al desarrollo en equipo de ChanguitApp.</p></div>
+    </div>
+  </div>
+</section>

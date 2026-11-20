@@ -1,0 +1,27 @@
+---
+// Gloire Éternelle. El canvas `cvMap` lo anima `main.js`.
+//
+// OJO: la línea de `.pillars` va en una sola línea. Los separadores "/" son
+// spans inline y un salto de línea les agregaría espacio alrededor.
+import ProjectViz from '../ProjectViz.astro';
+---
+
+<article class="proj grid">
+  <i class="rl draw"></i>
+  <div class="meta fade"><span>En desarrollo</span><span>Videojuego de estrategia</span></div>
+  <h3 class="pt3 split">Gloire Éternelle</h3>
+  <div class="info">
+    <p class="lede fade">Un juego donde gobernás un Estado con la ayuda de un asistente de inteligencia artificial.</p>
+    <p class="pillars fade" style="--d:1">Economía<span>/</span>Ejército<span>/</span>Política<span>/</span>Situación interna</p>
+    <dl class="facts fade" style="--d:2">
+      <div><dt>El objetivo</dt><dd>Expandirte por conquista o sofocar revoluciones antes de que te derroquen.</dd></div>
+      <div><dt>La idea</dt><dd>Combinar la profundidad estratégica de Hearts of Iron IV con la libertad de gestión de Pax Historia.</dd></div>
+    </dl>
+  </div>
+  <ProjectViz
+    canvasId="cvMap"
+    ariaLabel="Animación: un territorio se expande sobre un mapa de hexágonos y algunas regiones se rebelan"
+  >
+    <span><i style="background:var(--ink)"></i>Tu Estado</span><span><i style="background:var(--tkd)"></i>Revolución</span><span><i style="background:var(--ball);box-shadow:inset 0 0 0 1.5px var(--ink)"></i>Capital</span>
+  </ProjectViz>
+</article>

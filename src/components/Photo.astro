@@ -1,0 +1,14 @@
+---
+// Hueco de foto. Mientras no haya imagen, muestra el placeholder punteado.
+// `data-foto` es el identificador con el que después se enchufa el archivo.
+interface Props {
+  id: string;
+  label: string;
+  /** Retraso del revelado, para que las dos fotos de un par no entren juntas. */
+  delay?: string;
+}
+
+const { id, label, delay } = Astro.props;
+---
+
+<figure class="ph mask" data-foto={id} style={delay && `transition-delay:${delay}`}><div>{label}</div></figure>

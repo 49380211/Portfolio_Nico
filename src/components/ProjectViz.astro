@@ -1,0 +1,15 @@
+---
+// Columna derecha de un proyecto: el canvas animado dentro de su máscara,
+// y abajo la referencia de colores que llega por slot.
+interface Props {
+  canvasId: string;
+  ariaLabel: string;
+}
+
+const { canvasId, ariaLabel } = Astro.props;
+---
+
+<div class="viz-col" style="grid-column:7 / span 6;margin-top:clamp(24px,3vw,40px)">
+  <div class="viz mask"><canvas id={canvasId} role="img" aria-label={ariaLabel}></canvas></div>
+  <div class="legend fade"><slot /></div>
+</div>

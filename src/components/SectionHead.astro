@@ -1,0 +1,11 @@
+---
+// La fila que abre cada sección: la etiqueta entra con fade y la regla
+// se dibuja de izquierda a derecha cuando la sección aparece.
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<div class="head"><span class="fade">{label}</span><i class="r draw"></i></div>

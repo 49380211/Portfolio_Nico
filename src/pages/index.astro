@@ -1,201 +1,37 @@
 ---
-// Página única. En esta parte el markup está tal cual el original;
-// en la parte siguiente se corta en componentes.
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/sections/About.astro';
+import Education from '../components/sections/Education.astro';
+import Projects from '../components/sections/Projects.astro';
+import Sports from '../components/sections/Sports.astro';
+import Skills from '../components/sections/Skills.astro';
+import Contact from '../components/sections/Contact.astro';
+import TennisBall from '../components/TennisBall.astro';
+import Toast from '../components/Toast.astro';
 ---
 
 <BaseLayout
   title="Nicolás Atalah"
   description="Portfolio de Nicolás Atalah: estudiante, futuro ingeniero industrial y deportista. Buenos Aires."
 >
-  <div class="prog" id="prog"></div>
-  <nav class="nav" id="nav" aria-label="Secciones">
-    <a class="mono" href="#inicio">N. Atalah</a>
-    <ul>
-      <li><a href="#sobre">Sobre mí</a></li>
-      <li><a href="#formacion">Formación</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#deporte">Deporte</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
-
-  <header class="hero" id="inicio">
-    <div class="hwrap">
-      <span class="tag">Portfolio · 2026</span>
-      <h1 class="name" aria-label="Nicolás Atalah"><span class="l" aria-hidden="true"><span class="c">N</span><span class="c">I</span><span class="c">C</span><span class="c"><span class="slot"></span></span><span class="c">L</span><span class="c">Á</span><span class="c">S</span></span><span class="l" aria-hidden="true"><span class="c">A</span><span class="c">T</span><span class="c">A</span><span class="c">L</span><span class="c">A</span><span class="c">H</span></span></h1>
-      <p class="sub"><b>Estudiante · Futuro ingeniero industrial · Deportista</b> — Buenos Aires</p>
-    </div>
-  </header>
+  <Nav />
+  <Hero />
 
   <main>
-    <!-- SOBRE MÍ -->
-    <section class="sec" id="sobre">
-      <div class="wrap">
-        <div class="head"><span class="fade">Sobre mí</span><i class="r draw"></i></div>
-        <div class="grid about">
-          <h2 class="h2 split">Los números,<br>primero.</h2>
-          <div class="txt">
-            <p class="lead fade">Desde chico la matemática me resultó natural. Con eso y una familia de ingenieros, <span class="hl">el camino de la ingeniería apareció casi solo.</span></p>
-            <p class="fade" style="--d:1">La duda fue qué especialidad elegir. Me quedé con Ingeniería Industrial porque me abre muchas puertas: me permite explorar distintos rubros hasta encontrar mi lugar.</p>
-            <p class="fade" style="--d:2">Y se conecta con algo que me entusiasma cada vez más: el emprendedurismo.</p>
-          </div>
-          <div class="path" id="path">
-            <i class="track"></i><i class="fill"></i>
-            <div class="pt fade" style="--i:0;--d:1"><small>Punto de partida</small><b>Matemática y familia de ingenieros</b></div>
-            <div class="pt fade" style="--i:1;--d:2"><small>El camino</small><b>Ingeniería</b></div>
-            <div class="pt star fade" style="--i:2;--d:3"><small>La especialidad</small><b>Industrial</b></div>
-            <div class="pt fade" style="--i:3;--d:4"><small>Lo que me abre</small><b>Explorar rubros y emprender</b></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FORMACIÓN -->
-    <section class="sec" id="formacion">
-      <div class="wrap">
-        <div class="head"><span class="fade">Formación</span><i class="r draw"></i></div>
-        <h2 class="h2 split" style="margin-bottom:clamp(40px,5vw,72px)">Del secundario<br>a la ingeniería.</h2>
-        <div class="edu-row" data-odo>
-          <i class="rl draw"></i>
-          <div class="odo" data-v="2026" aria-label="2026"></div>
-          <div class="who fade" style="--d:1"><h3>ORT Argentina</h3><p>5.º año · orientación TIC</p></div>
-          <span class="state now fade" style="--d:2"><i></i>En curso</span>
-        </div>
-        <div class="edu-row" data-odo>
-          <i class="rl draw"></i>
-          <div class="odo" data-v="2027" aria-label="2027"></div>
-          <div class="who fade" style="--d:1"><h3>ITBA</h3><p>Ingeniería Industrial</p></div>
-          <span class="state next fade" style="--d:2"><i></i>Empiezo</span>
-        </div>
-        <div class="langs fade" id="langs">
-          <div class="k">Idiomas</div>
-          <ul>
-            <li><b>Español</b><span>Nativo</span><div class="dots" data-l="5"></div></li>
-            <li><b>Inglés</b><span>Fluido</span><div class="dots" data-l="4"></div></li>
-            <li><b>Portugués</b><span>Comprensión básica</span><div class="dots" data-l="2"></div></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROYECTOS -->
-    <section class="sec" id="proyectos">
-      <div class="wrap">
-        <div class="head"><span class="fade">Proyectos</span><i class="r draw"></i></div>
-
-        <article class="proj grid">
-          <i class="rl draw"></i>
-          <div class="meta fade"><span>Proyecto en equipo</span><span>Backend y planificación</span></div>
-          <h3 class="pt3 split">ChanguitApp</h3>
-          <div class="info">
-            <p class="lede fade">Una app que conecta a quien necesita resolver un trabajo puntual, una changa, con alguien que puede hacerlo cerca y en el momento.</p>
-            <dl class="facts fade" style="--d:1">
-              <div><dt>Mi rol</dt><dd>Me encargué del “motor” que hace funcionar la app por detrás y de la planificación.</dd></div>
-              <div><dt>Lo que me dejó</dt><dd>Aprender a organizar un proyecto grande entre varios y a sostenerlo en el tiempo.</dd></div>
-            </dl>
-            <p class="small-k fade">El proyecto, por etapas</p>
-            <ol class="stages" id="stages">
-              <li style="--i:0"><b>01</b>Registro de usuarios</li>
-              <li style="--i:1"><b>02</b>Ubicación</li>
-              <li style="--i:2"><b>03</b>Recorrido completo de cada trabajo</li>
-              <li style="--i:3"><b>04</b>Pagos</li>
-              <li style="--i:4"><b>05</b>Comunicación en tiempo real</li>
-            </ol>
-          </div>
-          <div class="viz-col" style="grid-column:7 / span 6;margin-top:clamp(24px,3vw,40px)">
-            <div class="viz mask"><canvas id="cvChanga" role="img" aria-label="Animación: pedidos de changas que se conectan con personas cercanas que pueden hacerlas"></canvas></div>
-            <div class="legend fade"><span><i style="background:var(--ink)"></i>Alguien necesita una changa</span><span><i style="background:var(--court)"></i>Alguien cerca puede hacerla</span></div>
-          </div>
-        </article>
-
-        <article class="proj grid">
-          <i class="rl draw"></i>
-          <div class="meta fade"><span>En desarrollo</span><span>Videojuego de estrategia</span></div>
-          <h3 class="pt3 split">Gloire Éternelle</h3>
-          <div class="info">
-            <p class="lede fade">Un juego donde gobernás un Estado con la ayuda de un asistente de inteligencia artificial.</p>
-            <p class="pillars fade" style="--d:1">Economía<span>/</span>Ejército<span>/</span>Política<span>/</span>Situación interna</p>
-            <dl class="facts fade" style="--d:2">
-              <div><dt>El objetivo</dt><dd>Expandirte por conquista o sofocar revoluciones antes de que te derroquen.</dd></div>
-              <div><dt>La idea</dt><dd>Combinar la profundidad estratégica de Hearts of Iron IV con la libertad de gestión de Pax Historia.</dd></div>
-            </dl>
-          </div>
-          <div class="viz-col" style="grid-column:7 / span 6;margin-top:clamp(24px,3vw,40px)">
-            <div class="viz mask"><canvas id="cvMap" role="img" aria-label="Animación: un territorio se expande sobre un mapa de hexágonos y algunas regiones se rebelan"></canvas></div>
-            <div class="legend fade"><span><i style="background:var(--ink)"></i>Tu Estado</span><span><i style="background:var(--tkd)"></i>Revolución</span><span><i style="background:var(--ball);box-shadow:inset 0 0 0 1.5px var(--ink)"></i>Capital</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- DEPORTE -->
-    <section class="sec" id="deporte">
-      <div class="wrap">
-        <div class="head"><span class="fade">Deporte</span><i class="r draw"></i></div>
-        <h2 class="h2 split" style="margin-bottom:clamp(48px,6vw,90px)">Dos deportes que<br>marcaron quién soy.</h2>
-        <div class="sports">
-          <article class="sp tenis">
-            <div class="big-n fade"><span class="num" data-count="4">4</span><small>años tenía cuando empecé. Nunca dejé.</small></div>
-            <h3 class="split">Tenis</h3>
-            <p class="fade">Competí en torneos intercountry, pero lo que más me dejó fueron las amistades, el compañerismo y las ganas constantes de superarme.</p>
-            <div class="kv fade"><span>Torneos intercountry</span><span>Sigo jugando</span></div>
-            <div class="photos">
-              <figure class="ph mask" data-foto="tenis-1"><div>Foto de tenis</div></figure>
-              <figure class="ph mask" data-foto="tenis-2" style="transition-delay:.12s"><div>Foto de tenis</div></figure>
-            </div>
-          </article>
-          <article class="sp tkd">
-            <div class="big-n fade"><span class="num" data-count="5">5</span><small>años tenía cuando empecé. Practiqué hasta 2021.</small></div>
-            <h3 class="split">Taekwondo</h3>
-            <p class="fade">Competí en Misiones, Avellaneda y otras sedes, y gané medallas en lucha y tules. Sus cinco principios me dejaron una huella que sigo llevando.</p>
-            <div class="kv fade"><span><i style="background:#E2B53C"></i>Oro</span><span><i style="background:#BFC6D2"></i>Plata</span><span><i style="background:#B9733A"></i>Bronce</span></div>
-            <ol class="principles" id="principles">
-              <li style="--i:0"><b>01</b><span>Cortesía</span><em>Ye Ui</em></li>
-              <li style="--i:1"><b>02</b><span>Integridad</span><em>Yom Chi</em></li>
-              <li style="--i:2"><b>03</b><span>Perseverancia</span><em>In Nae</em></li>
-              <li style="--i:3"><b>04</b><span>Autocontrol</span><em>Guk Gi</em></li>
-              <li style="--i:4"><b>05</b><span>Espíritu indomable</span><em>Baekjul Boolgool</em></li>
-            </ol>
-            <div class="photos">
-              <figure class="ph mask" data-foto="taekwondo-1"><div>Foto de taekwondo</div></figure>
-              <figure class="ph mask" data-foto="taekwondo-2" style="transition-delay:.12s"><div>Foto de taekwondo</div></figure>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- HABILIDADES -->
-    <section class="sec" id="habilidades">
-      <div class="wrap">
-        <div class="head"><span class="fade">Habilidades</span><i class="r draw"></i></div>
-        <div class="skills">
-          <div class="sk"><i class="rl draw"></i><h3 class="split">Comunicación</h3><p class="fade" style="--d:1">Me expreso con claridad, tanto para presentar una idea como para coordinar con otros.</p></div>
-          <div class="sk"><i class="rl draw" style="--d:1"></i><h3 class="split">Perseverancia</h3><p class="fade" style="--d:2">Más de una década de tenis y taekwondo me enseñó a no aflojar.</p></div>
-          <div class="sk"><i class="rl draw" style="--d:2"></i><h3 class="split">Liderazgo</h3><p class="fade" style="--d:3">Tomo la iniciativa y ayudo a ordenar al grupo hacia un objetivo común.</p></div>
-          <div class="sk"><i class="rl draw" style="--d:3"></i><h3 class="split">Trabajo en equipo</h3><p class="fade" style="--d:4">Del compañerismo en la cancha al desarrollo en equipo de ChanguitApp.</p></div>
-        </div>
-      </div>
-    </section>
+    <About />
+    <Education />
+    <Projects />
+    <Sports />
+    <Skills />
   </main>
 
-  <footer class="contact" id="contacto">
-    <div class="wrap">
-      <div class="head"><span class="fade">Contacto</span><i class="r draw"></i></div>
-      <h2 class="h2 split">¿Armamos<br>equipo<span class="q">?</span></h2>
-      <div class="links">
-        <div class="lk"><i class="rl draw"></i><span class="k fade">Mail</span><span class="v fade" id="mailv" style="--d:1">nicoatalah@gmail.com</span><button type="button" id="copy" class="fade" style="--d:2">Copiar</button></div>
-        <a class="lk" href="https://www.linkedin.com/in/nicolas-atalah" target="_blank" rel="noopener"><i class="rl draw" style="--d:1"></i><span class="k fade" style="--d:1">LinkedIn</span><span class="v fade" style="--d:2">nicolas-atalah</span><span class="go fade" style="--d:3" aria-hidden="true">↗</span></a>
-        <a class="lk" href="https://github.com/nicoatalah" target="_blank" rel="noopener"><i class="rl draw" style="--d:2"></i><span class="k fade" style="--d:2">GitHub</span><span class="v fade" style="--d:3">nicoatalah</span><span class="go fade" style="--d:4" aria-hidden="true">↗</span></a>
-      </div>
-      <div class="foot"><span>© 2026 Nicolás Atalah</span><span>Buenos Aires, Argentina</span></div>
-    </div>
-  </footer>
+  <Contact />
 
-  <div id="tbSh" aria-hidden="true"></div>
-  <div id="tb" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><radialGradient id="felt" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#ECFB7C"/><stop offset=".55" stop-color="#D3EA3C"/><stop offset="1" stop-color="#A7BE25"/></radialGradient></defs><circle cx="50" cy="50" r="48" fill="url(#felt)"/><g fill="none" stroke="#F5F7EC" stroke-width="4" stroke-linecap="round"><path d="M14 17C33 33 33 67 14 83"/><path d="M86 17C67 33 67 67 86 83"/></g></svg></div>
-  <div class="toast" id="toast" role="status"></div>
+  <!-- Fuera del flujo: la pelota y el aviso son `position: fixed`. -->
+  <TennisBall />
+  <Toast />
 
   <!-- Librerías externas: se cargan antes del script principal, que es un módulo
        y por lo tanto siempre corre después. -->

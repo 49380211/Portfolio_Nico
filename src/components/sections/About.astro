@@ -1,0 +1,26 @@
+---
+// Sobre mí: el texto a la derecha y, abajo, la línea de tiempo de 4 hitos
+// que se llena de izquierda a derecha (`#path`).
+import SectionHead from '../SectionHead.astro';
+---
+
+<section class="sec" id="sobre">
+  <div class="wrap">
+    <SectionHead label="Sobre mí" />
+    <div class="grid about">
+      <h2 class="h2 split">Los números,<br>primero.</h2>
+      <div class="txt">
+        <p class="lead fade">Desde chico la matemática me resultó natural. Con eso y una familia de ingenieros, <span class="hl">el camino de la ingeniería apareció casi solo.</span></p>
+        <p class="fade" style="--d:1">La duda fue qué especialidad elegir. Me quedé con Ingeniería Industrial porque me abre muchas puertas: me permite explorar distintos rubros hasta encontrar mi lugar.</p>
+        <p class="fade" style="--d:2">Y se conecta con algo que me entusiasma cada vez más: el emprendedurismo.</p>
+      </div>
+      <div class="path" id="path">
+        <i class="track"></i><i class="fill"></i>
+        <div class="pt fade" style="--i:0;--d:1"><small>Punto de partida</small><b>Matemática y familia de ingenieros</b></div>
+        <div class="pt fade" style="--i:1;--d:2"><small>El camino</small><b>Ingeniería</b></div>
+        <div class="pt star fade" style="--i:2;--d:3"><small>La especialidad</small><b>Industrial</b></div>
+        <div class="pt fade" style="--i:3;--d:4"><small>Lo que me abre</small><b>Explorar rubros y emprender</b></div>
+      </div>
+    </div>
+  </div>
+</section>

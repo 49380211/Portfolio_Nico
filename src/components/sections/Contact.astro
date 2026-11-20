@@ -1,0 +1,18 @@
+---
+// Contacto. El botón de copiar mail lo engancha `main.js` por `#copy`,
+// y `#mailv` es el texto que selecciona si el portapapeles no está disponible.
+import SectionHead from '../SectionHead.astro';
+---
+
+<footer class="contact" id="contacto">
+  <div class="wrap">
+    <SectionHead label="Contacto" />
+    <h2 class="h2 split">¿Armamos<br>equipo<span class="q">?</span></h2>
+    <div class="links">
+      <div class="lk"><i class="rl draw"></i><span class="k fade">Mail</span><span class="v fade" id="mailv" style="--d:1">nicoatalah@gmail.com</span><button type="button" id="copy" class="fade" style="--d:2">Copiar</button></div>
+      <a class="lk" href="https://www.linkedin.com/in/nicolas-atalah" target="_blank" rel="noopener"><i class="rl draw" style="--d:1"></i><span class="k fade" style="--d:1">LinkedIn</span><span class="v fade" style="--d:2">nicolas-atalah</span><span class="go fade" style="--d:3" aria-hidden="true">↗</span></a>
+      <a class="lk" href="https://github.com/nicoatalah" target="_blank" rel="noopener"><i class="rl draw" style="--d:2"></i><span class="k fade" style="--d:2">GitHub</span><span class="v fade" style="--d:3">nicoatalah</span><span class="go fade" style="--d:4" aria-hidden="true">↗</span></a>
+    </div>
+    <div class="foot"><span>© 2026 Nicolás Atalah</span><span>Buenos Aires, Argentina</span></div>
+  </div>
+</footer>

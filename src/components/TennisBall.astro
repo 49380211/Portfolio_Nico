@@ -1,0 +1,9 @@
+---
+// Pelota de tenis: cae en la "O" de NICOLÁS y al bajar se va al borde derecho.
+// El SVG es el fallback que se ve si Three.js no carga; cuando sí carga,
+// `main.js` lo reemplaza por el canvas del render 3D.
+// `#tbSh` es la sombra, que se mueve aparte para poder despegarse en el aire.
+---
+
+<div id="tbSh" aria-hidden="true"></div>
+<div id="tb" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><radialGradient id="felt" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#ECFB7C"/><stop offset=".55" stop-color="#D3EA3C"/><stop offset="1" stop-color="#A7BE25"/></radialGradient></defs><circle cx="50" cy="50" r="48" fill="url(#felt)"/><g fill="none" stroke="#F5F7EC" stroke-width="4" stroke-linecap="round"><path d="M14 17C33 33 33 67 14 83"/><path d="M86 17C67 33 67 67 86 83"/></g></svg></div>

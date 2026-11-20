@@ -1,0 +1,31 @@
+---
+// ChanguitApp. El canvas `cvChanga` lo anima `main.js`.
+import ProjectViz from '../ProjectViz.astro';
+---
+
+<article class="proj grid">
+  <i class="rl draw"></i>
+  <div class="meta fade"><span>Proyecto en equipo</span><span>Backend y planificación</span></div>
+  <h3 class="pt3 split">ChanguitApp</h3>
+  <div class="info">
+    <p class="lede fade">Una app que conecta a quien necesita resolver un trabajo puntual, una changa, con alguien que puede hacerlo cerca y en el momento.</p>
+    <dl class="facts fade" style="--d:1">
+      <div><dt>Mi rol</dt><dd>Me encargué del “motor” que hace funcionar la app por detrás y de la planificación.</dd></div>
+      <div><dt>Lo que me dejó</dt><dd>Aprender a organizar un proyecto grande entre varios y a sostenerlo en el tiempo.</dd></div>
+    </dl>
+    <p class="small-k fade">El proyecto, por etapas</p>
+    <ol class="stages" id="stages">
+      <li style="--i:0"><b>01</b>Registro de usuarios</li>
+      <li style="--i:1"><b>02</b>Ubicación</li>
+      <li style="--i:2"><b>03</b>Recorrido completo de cada trabajo</li>
+      <li style="--i:3"><b>04</b>Pagos</li>
+      <li style="--i:4"><b>05</b>Comunicación en tiempo real</li>
+    </ol>
+  </div>
+  <ProjectViz
+    canvasId="cvChanga"
+    ariaLabel="Animación: pedidos de changas que se conectan con personas cercanas que pueden hacerlas"
+  >
+    <span><i style="background:var(--ink)"></i>Alguien necesita una changa</span><span><i style="background:var(--court)"></i>Alguien cerca puede hacerla</span>
+  </ProjectViz>
+</article>
