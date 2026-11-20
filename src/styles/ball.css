@@ -1,0 +1,6 @@
+/* La pelota de tenis y su sombra. Van fijas y las mueve el JS por transform. */
+#tb,#tbSh{position:fixed;left:0;top:0;pointer-events:none;will-change:transform}
+#tb{z-index:40;width:280px;height:280px;margin:-140px 0 0 -140px;opacity:0}
+#tb.on{opacity:1}
+#tb svg,#tb canvas{width:100%!important;height:100%!important;display:block}
+#tbSh{z-index:39;width:280px;height:56px;margin:-28px 0 0 -140px;border-radius:50%;background:radial-gradient(closest-side,rgba(11,22,48,.3),rgba(11,22,48,0));filter:blur(4px);opacity:0}

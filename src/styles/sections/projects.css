@@ -1,0 +1,27 @@
+/* Proyectos: el bloque de cada uno, sus datos y la columna del canvas. */
+.proj{position:relative;padding-block:clamp(40px,5vw,64px) 0}
+.proj + .proj{margin-top:clamp(70px,9vw,130px)}
+.proj .rl{position:absolute;left:0;right:0;top:0;height:1px;background:var(--ink);transform-origin:0 50%}
+.proj .meta{grid-column:1 / -1;display:flex;justify-content:space-between;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:clamp(24px,3vw,40px)}
+.proj .meta span:last-child{color:var(--muted)}
+.proj .pt3{font-size:clamp(64px,10vw,156px)}
+.proj .info{grid-column:1 / span 5;margin-top:clamp(24px,3vw,40px)}
+.proj .pt3{grid-column:1 / -1}
+.lede{font-size:clamp(19px,1.6vw,22px);line-height:1.45;margin:0 0 26px}
+.facts{margin:0}
+.facts div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--rule)}
+.facts dt{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.facts dd{margin:0}
+.viz{position:relative;aspect-ratio:5/4;max-width:100%;border-radius:14px;overflow:hidden;background:var(--soft)}
+.viz canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:9px;height:9px;border-radius:50%}
+.stages{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:0}
+.stages li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:9px 0;border-top:1px solid var(--rule);font-weight:500;position:relative}
+.stages li b{font-size:13px;color:var(--muted);font-weight:600;padding-top:2px;font-variant-numeric:tabular-nums}
+.stages li::after{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--court);transform:scaleX(0);transform-origin:0 50%;transition:transform .7s var(--ease-io);transition-delay:calc(var(--i) * .3s + .3s)}
+.stages.in li::after{transform:scaleX(1)}
+.small-k{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:30px 0 0}
+.pillars{font-family:var(--f-disp);font-weight:700;text-transform:uppercase;font-size:clamp(22px,2vw,28px);line-height:1.15;margin:0 0 24px}
+.pillars span{color:var(--rule);margin:0 .2em}

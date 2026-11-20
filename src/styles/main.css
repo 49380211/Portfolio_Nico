@@ -1,0 +1,26 @@
+/* Hoja de entrada: lo único que importa el layout.
+   El orden de los @import ES el orden de la cascada, así que no se cambia
+   a la ligera. Va de lo general a lo particular, y responsive.css al final
+   porque redefine todo lo anterior. */
+
+@import './base.css';
+@import './tokens.css';
+@import './layout.css';
+
+@import './nav.css';
+@import './hero.css';
+@import './ball.css';
+
+@import './sections.css';
+@import './reveals.css';
+
+@import './sections/about.css';
+@import './sections/education.css';
+@import './sections/projects.css';
+@import './sections/sports.css';
+@import './sections/skills.css';
+@import './sections/contact.css';
+
+@import './toast.css';
+
+@import './responsive.css';

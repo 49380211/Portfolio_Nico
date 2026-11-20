@@ -1,0 +1,8 @@
+/* Habilidades: cuatro columnas con la regla que se pinta al pasar el mouse. */
+.skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.sk{position:relative;padding-top:22px;min-width:0}
+.sk .rl{position:absolute;left:0;right:0;top:0;height:1px;background:var(--ink);transform-origin:0 50%}
+.sk .rl::after{content:"";position:absolute;inset:0;background:var(--court);transform:scaleX(0);transform-origin:0 50%;transition:transform .6s var(--ease)}
+.sk:hover .rl::after{transform:scaleX(1)}
+.sk h3{font-size:clamp(32px,2.8vw,42px);margin-bottom:12px}
+.sk p{margin:0;color:var(--muted);font-size:16px}

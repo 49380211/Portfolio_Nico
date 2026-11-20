@@ -1,0 +1,9 @@
+/* Paleta, tipografías y curvas de easing. Todo el diseño sale de acá. */
+:root{
+  --bg:#F5F6F8; --ink:#0B1630; --muted:#5E6779; --rule:#D7DBE3; --soft:#ECEEF2;
+  --court:#2648B5; --ball:#DDF35A; --tkd:#D2342C;
+  --f-disp:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-text:"Figtree","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1); --ease-io:cubic-bezier(.65,0,.35,1);
+  color-scheme:light;
+}

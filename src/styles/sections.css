@@ -1,0 +1,11 @@
+/* Lo común a todas las secciones: el encabezado, los títulos y el subrayado. */
+.sec{padding-block:clamp(90px,13vw,190px) 0}
+.head{display:flex;align-items:center;gap:18px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:clamp(36px,5vw,64px)}
+.head .r{flex:1;height:1px;background:var(--ink);transform-origin:0 50%}
+.head .n{font-variant-numeric:tabular-nums;color:var(--muted)}
+.h2{font-size:clamp(54px,8.6vw,132px)}
+.h2 .ln,.split .ln{display:block;overflow:hidden;padding-top:.04em;margin-top:-.04em}
+.h2 .ln > span,.split .ln > span{display:inline-block}
+.muted{color:var(--muted)}
+.hl{background:linear-gradient(transparent 60%,var(--ball) 60%) no-repeat 0 0/0 100%;transition:background-size 1.3s var(--ease-io) .45s}
+.in .hl,.hl.in{background-size:100% 100%}

@@ -1,0 +1,15 @@
+/* Contacto: los enlaces grandes y el pie. */
+.contact{padding-block:clamp(110px,15vw,220px) 28px}
+.contact .h2{font-size:clamp(68px,13vw,200px)}
+.contact .q{color:var(--court)}
+.links{margin-top:clamp(44px,6vw,80px)}
+.lk{display:grid;grid-template-columns:150px minmax(0,1fr) auto;align-items:center;gap:16px;padding:22px 0;text-decoration:none;position:relative}
+.lk .rl{position:absolute;left:0;right:0;top:0;height:1px;background:var(--ink);transform-origin:0 50%}
+.lk .k{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lk .v{font-size:clamp(20px,2.6vw,34px);font-weight:500;letter-spacing:-.02em;overflow-wrap:anywhere;transition:transform .5s var(--ease),color .3s}
+.lk:hover .v{transform:translateX(12px);color:var(--court)}
+.lk .go{font-size:22px;transition:transform .4s var(--ease)}
+.lk:hover .go{transform:translate(4px,-4px)}
+.lk button{font:600 13px var(--f-text);letter-spacing:.06em;color:var(--ink);background:none;border:1px solid var(--ink);border-radius:3px;padding:8px 14px;cursor:pointer;transition:background .25s,color .25s}
+.lk button:hover{background:var(--ink);color:var(--bg)}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:clamp(70px,9vw,120px);font-size:13px;color:var(--muted)}

@@ -1,0 +1,23 @@
+/* Formación: los odómetros de los años, los estados y los idiomas. */
+.edu-row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2vw,28px);align-items:center;padding-block:clamp(22px,3vw,34px);position:relative}
+.edu-row .rl{position:absolute;left:0;right:0;top:0;height:1px;background:var(--ink);transform-origin:0 50%}
+.odo{grid-column:1 / span 4;font-family:var(--f-disp);font-weight:800;font-size:clamp(76px,10vw,150px);line-height:1;display:flex;font-variant-numeric:tabular-nums}
+.dg{display:block;height:1em;overflow:hidden;padding-top:0}
+.dg span{display:block;transition:transform 1.8s var(--ease);transition-delay:calc(var(--i) * 110ms + 150ms)}
+.dg span i{display:block;font-style:normal;height:1em;line-height:1}
+.edu-row .who{grid-column:5 / span 5}
+.edu-row h3{font-size:clamp(34px,3.6vw,52px)}
+.edu-row p{margin:6px 0 0;color:var(--muted)}
+.state{grid-column:10 / span 3;justify-self:end;display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+.state i{width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.state.now i{background:var(--court);box-shadow:0 0 0 0 rgba(38,72,181,.5);animation:ping 2s infinite}
+.state.next i{background:transparent;border:1.5px solid var(--ink)}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(38,72,181,0)}}
+.langs{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2vw,28px);margin-top:clamp(40px,5vw,64px)}
+.langs .k{grid-column:1 / span 4;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding-top:6px}
+.langs ul{grid-column:5 / span 8;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.langs li b{display:block;font-size:20px;font-weight:600}
+.langs li span{display:block;color:var(--muted);font-size:15px;margin-bottom:12px}
+.dots{display:flex;gap:6px}
+.dots i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink);transition:background .3s;transition-delay:calc(var(--i) * 120ms + 300ms)}
+.in .dots i.f{background:var(--ink)}
