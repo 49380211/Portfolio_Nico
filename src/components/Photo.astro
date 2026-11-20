@@ -1,14 +1,52 @@
 ---
-// Hueco de foto. Mientras no haya imagen, muestra el placeholder punteado.
-// `data-foto` es el identificador con el que después se enchufa el archivo.
+import { Image } from 'astro:assets';
+
+// Hueco de foto. Mientras no haya archivo muestra el placeholder punteado;
+// en cuanto aparece, se reemplaza solo.
+//
+// Para enchufar una foto: dejá el archivo en src/assets/fotos/ con el nombre
+// del id, por ejemplo "tenis-1.jpg". No hay que tocar código.
 interface Props {
+  /** Identificador y, a la vez, nombre del archivo que se busca. */
   id: string;
+  /** Texto del placeholder, mientras no haya foto. */
   label: string;
+  /** Descripción de la imagen para lectores de pantalla. */
+  alt?: string;
   /** Retraso del revelado, para que las dos fotos de un par no entren juntas. */
   delay?: string;
 }
 
-const { id, label, delay } = Astro.props;
+const { id, label, alt, delay } = Astro.props;
+
+// Vite resuelve este glob en tiempo de compilación, así que solo entra al
+// bundle lo que realmente existe en la carpeta.
+const archivos = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/fotos/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}',
+  { eager: true },
+);
+
+const nombre = (ruta: string) => ruta.split('/').pop()!.replace(/\.[^.]+$/, '').toLowerCase();
+const foto = Object.entries(archivos).find(([ruta]) => nombre(ruta) === id.toLowerCase())?.[1].default;
+
+// Las fotos ocupan media columna de las dos en que se parte cada deporte:
+// la mitad del ancho en pantallas angostas, un cuarto en las anchas.
+const sizes = '(max-width: 980px) 50vw, 25vw';
 ---
 
-<figure class="ph mask" data-foto={id} style={delay && `transition-delay:${delay}`}><div>{label}</div></figure>
+<figure class="ph mask" data-foto={id} style={delay && `transition-delay:${delay}`}>
+  {
+    foto ? (
+      <Image
+        src={foto}
+        alt={alt ?? label}
+        widths={[320, 480, 640, 960]}
+        sizes={sizes}
+        loading="lazy"
+        decoding="async"
+      />
+    ) : (
+      <div>{label}</div>
+    )
+  }
+</figure>
